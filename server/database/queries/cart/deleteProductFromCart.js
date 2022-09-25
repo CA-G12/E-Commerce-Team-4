@@ -1,9 +1,16 @@
 const connection = require('../../config/connection');
 
-const deleteProductFromCart = () => {
+const deleteProductFromCart = (productId) => {
   const sql = {
-    text: '',
-    values: [],
+    text: `
+      DELETE FROM
+        cart
+      WHERE
+        product_id = $1
+      RETURNING
+        product_id;
+    `,
+    values: [productId],
   };
   return connection.query(sql);
 };
