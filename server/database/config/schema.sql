@@ -15,7 +15,7 @@ CREATE TABLE users(
 CREATE TABLE products(
   id SERIAL PRIMARY KEY,
   name VARCHAR(255) NOT NULL,
-  products_img TEXT,
+  product_img TEXT,
   price INT NOT NULL, 
   category VARCHAR(255) NOT NULL,
   description TEXT NOT NULL,
@@ -24,13 +24,11 @@ CREATE TABLE products(
 
 
 CREATE TABLE cart(
-  user_id int not null,
-  product_id int not null,
-  PRIMARY KEY(user_id, product_id),
-  foreign key (product_id) references products(id) on delete cascade,
-  foreign key (user_id) references users(id) on delete cascade
+  id INT SERIAL PRIMARY KEY,
+  user_id INT NOT NULL,
+  product_id INT NOT NULL,
+  FOREIGN KEY (product_id) REFERENCES products(id) ON DELETE CASCADE,
+  FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
 );
-
-
 
 COMMIT;
