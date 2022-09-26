@@ -1,10 +1,10 @@
 const connection = require('../../config/connection');
 
-const getCartProductsForUser = (userId) => {
+const getCartProductsForUserQuery = (userId) => {
   const sql = {
     text: `
       SELECT
-        id, name, product_img price, category, description
+        products.id, products.name, product_img, price, category, description, user_id, product_id
       FROM
         products
       INNER JOIN
@@ -22,5 +22,5 @@ const getCartProductsForUser = (userId) => {
 };
 
 module.exports = {
-  getCartProductsForUser,
+  getCartProductsForUserQuery,
 };
