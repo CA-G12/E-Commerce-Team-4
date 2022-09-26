@@ -1,5 +1,7 @@
-const signUpValidationSchema = require('./validateSignup')
+const signUpValidationSchema = require('./validateSignup');
+const schemaLogin = require('./validateLogin');
 
 module.exports = {
-  signUpValidationSchema
-}
+  signUpValidationSchema,
+  schemaLogin,
+};
