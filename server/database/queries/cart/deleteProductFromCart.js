@@ -1,6 +1,6 @@
 const connection = require('../../config/connection');
 
-const deleteProductFromCart = (productId) => {
+const deleteProductFromCartQuery = (productId) => {
   const sql = {
     text: `
       DELETE FROM
@@ -16,5 +16,5 @@ const deleteProductFromCart = (productId) => {
 };
 
 module.exports = {
-  deleteProductFromCart,
+  deleteProductFromCartQuery,
 };

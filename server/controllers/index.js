@@ -4,7 +4,7 @@ const {
   signup,
 } = require('./auth');
 const {
-  getCartProduct,
+  getCartProducts,
   postToCart,
   deleteFromCart,
 } = require('./cart');
@@ -22,7 +22,7 @@ module.exports = {
   login,
   logout,
   signup,
-  getCartProduct,
+  getCartProducts,
   deleteFromCart,
   postToCart,
   getOneProduct,
