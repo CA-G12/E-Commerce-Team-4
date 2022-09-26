@@ -9,7 +9,7 @@ CREATE TABLE users(
   email VARCHAR(255) UNIQUE,
   country VARCHAR(255) NOT NULL,
   address VARCHAR(255) NOT NULL,
-  password TEXT NOT NULL,
+  password TEXT NOT NULL 
 );
 
 CREATE TABLE products(
@@ -18,13 +18,13 @@ CREATE TABLE products(
   product_img TEXT,
   price INT NOT NULL, 
   category VARCHAR(255) NOT NULL,
-  description TEXT NOT NULL,
+  description TEXT NOT NULL
 );
 
 
 
 CREATE TABLE cart(
-  id INT SERIAL PRIMARY KEY,
+  id SERIAL PRIMARY KEY,
   user_id INT NOT NULL,
   product_id INT NOT NULL,
   FOREIGN KEY (product_id) REFERENCES products(id) ON DELETE CASCADE,
