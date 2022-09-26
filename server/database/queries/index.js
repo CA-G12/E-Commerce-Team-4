@@ -1,7 +1,7 @@
 const { getUserInfo } = require('./users');
 const {
   deleteProductFromCart,
-  getCArtProductsForUser,
+  getCartProductsForUser,
 } = require('./cart');
 const {
   getAllProducts,
@@ -15,7 +15,7 @@ const {
 module.exports = {
   getUserInfo,
   deleteProductFromCart,
-  getCArtProductsForUser,
+  getCartProductsForUser,
   getAllProducts,
   getOneProduct,
   getAccount,
