@@ -1,7 +1,9 @@
-const { deleteProductFromCart } = require('./deleteProductFromCart');
-const { getCArtProductsForUser } = require('./getCartProductsForUser');
+const { deleteProductFromCartQuery } = require('./deleteProductFromCart');
+const { getCartProductsForUserQuery } = require('./getCartProductsForUser');
+const { postToCartQuery } = require('./postToCart');
 
 module.exports = {
-  deleteProductFromCart,
-  getCArtProductsForUser,
+  deleteProductFromCartQuery,
+  getCartProductsForUserQuery,
+  postToCartQuery,
 };

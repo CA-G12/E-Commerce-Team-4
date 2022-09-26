@@ -1,23 +1,30 @@
-const { getUserInfo } = require('./users');
+const { getUserInfo, signUpQuery } = require('./users');
+
 const {
-  deleteProductFromCart,
-  getCArtProductsForUser,
+  deleteProductFromCartQuery,
+  getCartProductsForUserQuery,
+  postToCartQuery,
 } = require('./cart');
+
 const {
   getAllProducts,
   getOneProduct,
 } = require('./products');
+
 const {
   getAccount,
   getPassword,
 } = require('./auth');
 
+
 module.exports = {
   getUserInfo,
-  deleteProductFromCart,
-  getCArtProductsForUser,
+  deleteProductFromCartQuery,
+  postToCartQuery,
+  getCartProductsForUserQuery,
   getAllProducts,
   getOneProduct,
   getAccount,
   getPassword,
+  signUpQuery,
 };
