@@ -1,16 +1,20 @@
-const { getUserInfo } = require('./users');
+const { getUserInfo, signUpQuery } = require('./users');
+
 const {
   deleteProductFromCart,
   getCArtProductsForUser,
 } = require('./cart');
+
 const {
   getAllProducts,
   getOneProduct,
 } = require('./products');
+
 const {
   getAccount,
   getPassword,
 } = require('./auth');
+
 
 module.exports = {
   getUserInfo,
@@ -20,4 +24,5 @@ module.exports = {
   getOneProduct,
   getAccount,
   getPassword,
+  signUpQuery,
 };
