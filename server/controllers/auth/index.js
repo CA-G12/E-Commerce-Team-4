@@ -1,9 +1,9 @@
-const { login } = require('./login');
+const { controllerLogin } = require('./login');
 const { signup } = require('./signup');
 const { logout } = require('./logout');
 
 module.exports = {
-  login,
+  controllerLogin,
   signup,
   logout,
 };

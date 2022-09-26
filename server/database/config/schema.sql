@@ -9,7 +9,7 @@ CREATE TABLE users(
   email VARCHAR(255) UNIQUE,
   country VARCHAR(255) NOT NULL,
   address VARCHAR(255) NOT NULL,
-  password TEXT NOT NULL 
+  password TEXT NOT NULL
 );
 
 CREATE TABLE products(
