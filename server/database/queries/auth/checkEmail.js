@@ -1,13 +1,13 @@
 const connection = require('../../config/connection');
 
-const getPassword = (email) => {
+const checkEmail = (email) => {
   const sql = {
-    text: 'select id , password from users where email = $1',
+    text: 'select id from users where email = $1',
     values: [email],
   };
   return connection.query(sql);
 };
 
 module.exports = {
-  getPassword,
+  checkEmail,
 };

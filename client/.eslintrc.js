@@ -7,6 +7,7 @@ module.exports = {
     'plugin:react/recommended',
     'airbnb',
     'prettier/prettier',
+    'plugin:react/jsx-runtime',
   ],
   overrides: [
   ],

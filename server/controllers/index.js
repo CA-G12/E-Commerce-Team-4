@@ -12,6 +12,10 @@ const {
   deleteProduct,
   getOneProduct,
   getProducts,
+  getProductsByPriceDesc,
+  getProductsByPriceAsc,
+  getProductsByCategory,
+  showMoreProducts,
 } = require('./products');
 
 module.exports = {
@@ -24,4 +28,8 @@ module.exports = {
   getOneProduct,
   getProducts,
   deleteProduct,
+  getProductsByPriceDesc,
+  getProductsByPriceAsc,
+  getProductsByCategory,
+  showMoreProducts,
 };
