@@ -11,5 +11,4 @@ router.use(errors);
 router.use(cart);
 router.use(products);
 router.use(users);
-
 module.exports = router;
