@@ -1,9 +1,9 @@
 const connection = require('../../config/connection');
 
-const getPassword = () => {
+const getPassword = (email) => {
   const sql = {
-    text: '',
-    values: [],
+    text: 'select id , password from users where email = $1',
+    values: [email],
   };
   return connection.query(sql);
 };
