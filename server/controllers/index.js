@@ -1,7 +1,7 @@
 const {
   login,
   logout,
-  signup,
+  signUp,
 } = require('./auth');
 const {
   getCartProduct,
@@ -17,7 +17,7 @@ const {
 module.exports = {
   login,
   logout,
-  signup,
+  signUp,
   getCartProduct,
   deleteFromCart,
   postToCart,

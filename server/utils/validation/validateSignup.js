@@ -1,11 +1,12 @@
+require('dotenv').config();
 const joi = require('joi');
 
 const signUpValidationSchema = joi.object({
   name: joi.string().required(),
-  userName: joi.string().alphanum().min(3).max(30)
+  username: joi.string().alphanum().min(3).max(30)
   .required(),
-  email: joi.string().email().required().pattern(/^(?=.[0-9])(?=.[!@#$%^&])[a-zA-Z0-9!@#$%^&]{7,}$/),
-  password: joi.string().alphanum().min(7).max(30).pattern(/^[a-zA-z0-9]?.*@[a-zA-z0-9]{1,}.[a-zA-Z]{1,}$/),
+  email: joi.string().email().required().pattern(/^[a-zA-z0-9]?.*@[a-zA-z0-9]{1,}.[a-zA-Z]{1,}$/),
+  password: joi.string().alphanum().min(7).max(30),
   confirmPassword: joi.ref('password'),
   country: joi.string().required(),
   address: joi.string().required(),
