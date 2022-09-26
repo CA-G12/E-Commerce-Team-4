@@ -2,7 +2,7 @@ const { getUserInfo, signUpQuery } = require('./users');
 
 const {
   deleteProductFromCart,
-  getCArtProductsForUser,
+  getCartProductsForUser,
 } = require('./cart');
 
 const {
@@ -19,7 +19,7 @@ const {
 module.exports = {
   getUserInfo,
   deleteProductFromCart,
-  getCArtProductsForUser,
+  getCartProductsForUser,
   getAllProducts,
   getOneProduct,
   getAccount,
