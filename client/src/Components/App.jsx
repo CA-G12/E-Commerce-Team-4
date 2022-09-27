@@ -1,8 +1,10 @@
 import './App.css';
+import Cart from './Cart/Cart';
 // import { createBrowserRouter, RouterProvider, Route } from 'react-router-dom';
-import Header from './LandingPage/Header/Header';
-import Footer from './LandingPage/Footer/Footer';
+// import Header from './LandingPage/Header/Header';
+// import Footer from './LandingPage/Footer/Footer';
 // import LandingPage from './LandingPage/LandingPage';
+
 
 // const router = createBrowserRouter([
 //   {
@@ -15,9 +17,9 @@ import Footer from './LandingPage/Footer/Footer';
 function App() {
   return (
     <div className="App">
-      <Header />
+      <Cart />
       {/* <LandingPage /> */}
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }
