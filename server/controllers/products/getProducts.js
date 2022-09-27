@@ -59,8 +59,10 @@ const getProductsByCategory = (req, res) => {
 // ! showMore
 const showMoreProducts = (req, res) => {
   // ? Do something.
-  showMoreProductsQuery()
-    .then((result) => res.json({ data: result.rows, statusCode: 200 }))
+  const { number } = req.params
+  showMoreProductsQuery(number)
+    .then((result) => {
+      return res.json({ data: result.rows, statusCode: 200 })})
     .catch((err) =>
       res.send({
         msg: err.message || 'Internal server error',

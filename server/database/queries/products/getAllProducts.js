@@ -32,10 +32,10 @@ const getProductsByCategoryQuery = (category) => {
   return connection.query(sql.text, sql.values);
 };
 
-const showMoreProductsQuery = () => {
+const showMoreProductsQuery = (number) => {
   const sql = {
-    text: 'select * from products OFFSET 2 ROWS FETCH NEXT 2 ROWS ONLY;',
-    values: [],
+    text: `select * from products OFFSET '${2 * number}' ROWS FETCH NEXT 2 ROWS ONLY;`,
+    values: [number],
   };
   return connection.query(sql.text);
 };

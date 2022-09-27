@@ -11,6 +11,6 @@ router.get('/products', getProducts);
 router.get('/productsByPriceDesc', getProductsByPriceDesc);
 router.get('/productsByPriceAsc', getProductsByPriceAsc);
 router.get('/products/:category', getProductsByCategory);
-router.get('/showMore', showMoreProducts);
+router.get('/showMore/?:number', showMoreProducts);
 
 module.exports = router;
