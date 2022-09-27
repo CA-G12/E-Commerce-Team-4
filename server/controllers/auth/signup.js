@@ -1,6 +1,7 @@
 const { hash } = require('bcrypt');
-const { signUpQuery } = require('../../database/queries');
+const { addUserQuery } = require('../../database/queries');
 const { signUpValidationSchema } = require('../../utils');
+const CustomizedError = require('../../errors/customError');
 
 const signUp = (req, res) => {
   const { name, email, username, password, confirmPassword, country, address } =
@@ -16,9 +17,9 @@ const signUp = (req, res) => {
       country,
       address,
     })
-    .then(() => hash(password, 10))
+    .then(() => hash(password, 12))
     .then((hashed) =>
-      signUpQuery({
+      addUserQuery({
         name,
         email,
         username,
@@ -30,10 +31,13 @@ const signUp = (req, res) => {
     )
     .then(({ rowCount }) => {
       if (rowCount) {
-        res.json({ message: 'created account succesfuly' });
+        res.json({ message: 'account is created successfully' });
       }
     })
-    .catch((err) => console.log('errrrorrrrrrrrrr', err));
+    .catch((err) => {
+      console.log(`Error: ${err}`);
+      throw new CustomizedError(500, `Error: ${err}`);
+    });
 };
 
 module.exports = {
