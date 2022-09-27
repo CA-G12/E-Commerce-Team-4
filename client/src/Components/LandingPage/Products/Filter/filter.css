@@ -2,6 +2,7 @@ section.Filter-container{
     border: 2px red solid;
     padding: 10px 5px;
     width: 300px;
+    display: flex;
 }
 
 section.Filter-container h4 {
