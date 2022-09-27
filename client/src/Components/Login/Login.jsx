@@ -1,9 +1,11 @@
 import { useState } from 'react';
+import { FaWindowClose } from 'react-icons/fa';
 import axios from 'axios';
 import './Login.css';
 
 export default function Login() {
   const [loginData, setLoginData] = useState({});
+  // eslint-disable-next-line no-unused-vars
   const [isLogged, setIsLogged] = useState(false);
   const [error, setError] = useState('');
 
@@ -27,11 +29,19 @@ export default function Login() {
       });
   };
 
-  if (error) return <h1 className="not-logged">Wrong password or email</h1>;
-  if (isLogged || loginData.msg) return <h1 className='success'>Logged in successfully</h1>
 
   return (
     <section className="login-outer-cont">
+    { (loginData.msg === 'login true') && 
+    <h1 className='success'>
+      Logged in successfully
+      <FaWindowClose className="close-icon" onClick={() => setIsLogged(false)} />
+    </h1> }
+    { (error) && 
+    <h1 className='error'>
+      Wrong password or email
+      <FaWindowClose className="close-icon" onClick={() => setError('')} />
+    </h1> }
       <section className="login-inner-cont">
         <img
           className="login-image"
