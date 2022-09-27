@@ -32,23 +32,3 @@ function Product({ data }) {
 }
 
 export default Product
-
-/*
-category
-: 
-"mobile"
-description
-: 
-"mobile discription"
-id
-: 
-1
-name
-: 
-"product1"
-price
-: 
-30
-product_img
-: 
-*/
