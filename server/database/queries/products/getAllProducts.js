@@ -16,7 +16,6 @@ const getAllProductsDescQuery = () => {
   return connection.query(sql.text);
 };
 
-
 const getAllProductsAscQuery = () => {
   const sql = {
     text: 'select * from products ORDER BY price ASC',
@@ -33,7 +32,6 @@ const getProductsByCategoryQuery = (category) => {
   return connection.query(sql.text, sql.values);
 };
 
-
 const showMoreProductsQuery = () => {
   const sql = {
     text: 'select * from products OFFSET 2 ROWS FETCH NEXT 2 ROWS ONLY;',
@@ -42,7 +40,10 @@ const showMoreProductsQuery = () => {
   return connection.query(sql.text);
 };
 
-
 module.exports = {
-  getAllProductsQuery, getAllProductsDescQuery, getAllProductsAscQuery, getProductsByCategoryQuery, showMoreProductsQuery
+  getAllProductsQuery,
+  getAllProductsDescQuery,
+  getAllProductsAscQuery,
+  getProductsByCategoryQuery,
+  showMoreProductsQuery,
 };

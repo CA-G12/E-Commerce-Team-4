@@ -4,9 +4,7 @@ const { Pool } = require('pg');
 
 let connectionString = '';
 let ssl = false;
-const {
-  NODE_ENV, DATABASE_URL, DEV_DB_URL, TEST_DB_URL,
-} = process.env;
+const { NODE_ENV, DATABASE_URL, DEV_DB_URL, TEST_DB_URL } = process.env;
 
 switch (NODE_ENV) {
   case 'prod':
