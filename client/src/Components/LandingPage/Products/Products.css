@@ -1,0 +1,19 @@
+section.products-filter-container{
+    display: flex;
+    justify-content: space-around;
+    width: 90%;
+    margin: 20px auto;
+    /* border: 2px red solid; */
+}
+
+.products-container{
+    /* border: 2px red solid; */
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+
+}
+
+.products-container div.card {
+    margin: 10px 0;
+}
