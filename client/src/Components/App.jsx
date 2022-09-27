@@ -1,22 +1,9 @@
 import './App.css';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Cart from './Cart/Cart';
- import { createBrowserRouter, RouterProvider, Route } from 'react-router-dom';
- import Header from './LandingPage/Header/Header';
- import Footer from './LandingPage/Footer/Footer';
- import LandingPage from './LandingPage/LandingPage';
-
-
- const router = createBrowserRouter([
-  {
-    path: '/',
-     element: <LandingPage />,
-
-   },
- ]);
-
-import './App.css'
-import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-import LandingPage from './LandingPage/LandingPage'
+import LandingPage from './LandingPage/LandingPage';
+import Login from './Login/Login';
+import Signup from './Signup/Signup';
 
 const router = createBrowserRouter([
   {
@@ -25,15 +12,15 @@ const router = createBrowserRouter([
   },
   {
     path: '/signup',
-    element: <div>login</div>,
+    element: <Signup />,
   },
   {
     path: '/login',
-    element: <div>login</div>,
+    element: <Login />,
   },
   {
     path: '/cart',
-    element: <div>cart</div>,
+    element: <Cart />,
   },
   {
     path: '/product/:productId',
@@ -44,9 +31,6 @@ const router = createBrowserRouter([
 function App() {
   return (
     <div className="App">
-      <Cart />
-      <LandingPage /> 
-       <Footer /> 
       <RouterProvider router={router} />
     </div>
   )
