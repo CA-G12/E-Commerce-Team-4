@@ -1,5 +1,6 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 function FilterCategory() {
+  const handle = () => 'test'
   return (
     <div>
       <h4>Select Category</h4>
@@ -10,6 +11,7 @@ function FilterCategory() {
           name="cat"
           value="Mobile"
           checked
+          onChange={handle}
         />
       </fieldset>
       <fieldset>
@@ -19,6 +21,7 @@ function FilterCategory() {
           name="cat"
           value="Mobile"
           checked
+          onChange={handle}
         />
       </fieldset>
 
@@ -29,6 +32,7 @@ function FilterCategory() {
           name="cat"
           value="Laptop"
           checked={false}
+          onChange={handle}
         />
       </fieldset>
 
@@ -39,6 +43,7 @@ function FilterCategory() {
           name="cat"
           value="Watch"
           checked={false}
+          onChange={handle}
         />
       </fieldset>
 
@@ -49,11 +54,11 @@ function FilterCategory() {
           name="cat"
           value="Accessories"
           checked={false}
+          onChange={handle}
         />
       </fieldset>
-
     </div>
-  );
+  )
 }
 
-export default FilterCategory;
+export default FilterCategory
