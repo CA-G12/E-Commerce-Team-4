@@ -17,7 +17,12 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.json());
 app.use(compression());
-app.use(helmet.contentSecurityPolicy({ useDefaults: true, directives: { 'img-src': ["'self'", 'https: data:'] } }));
+app.use(
+  helmet.contentSecurityPolicy({
+    useDefaults: true,
+    directives: { 'img-src': ["'self'", 'https: data:'] },
+  })
+);
 app.use(express.static(join(__dirname, '..', 'client', 'build')));
 app.use('/api/v1/', router);
 

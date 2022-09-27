@@ -1,13 +1,5 @@
-const {
-  login,
-  logout,
-  signUp,
-} = require('./auth');
-const {
-  getCartProducts,
-  postToCart,
-  deleteFromCart,
-} = require('./cart');
+const { login, logout, signUp } = require('./auth');
+const { getCartProducts, postToCart, deleteFromCart } = require('./cart');
 const {
   deleteProduct,
   getOneProduct,

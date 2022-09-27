@@ -1,4 +1,10 @@
-const { getProducts,   getProductsByPriceDesc, getProductsByPriceAsc, getProductsByCategory, showMoreProducts } = require('./getProducts');
+const {
+  getProducts,
+  getProductsByPriceDesc,
+  getProductsByPriceAsc,
+  getProductsByCategory,
+  showMoreProducts,
+} = require('./getProducts');
 const { getOneProduct } = require('./getOneProduct');
 const { deleteProduct } = require('./deleteProduct');
 

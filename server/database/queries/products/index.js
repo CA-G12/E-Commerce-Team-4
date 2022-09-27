@@ -1,4 +1,10 @@
-const {  getAllProductsQuery, getAllProductsDescQuery, getAllProductsAscQuery, getProductsByCategoryQuery, showMoreProductsQuery} = require('./getAllProducts');
+const {
+  getAllProductsQuery,
+  getAllProductsDescQuery,
+  getAllProductsAscQuery,
+  getProductsByCategoryQuery,
+  showMoreProductsQuery,
+} = require('./getAllProducts');
 const { getOneProduct } = require('./getOneProduct');
 
 module.exports = {
@@ -7,5 +13,5 @@ module.exports = {
   getAllProductsDescQuery,
   getAllProductsAscQuery,
   getProductsByCategoryQuery,
-  showMoreProductsQuery
+  showMoreProductsQuery,
 };
