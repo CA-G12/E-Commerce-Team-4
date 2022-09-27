@@ -1,0 +1,50 @@
+section.Filter-container{
+    border: 2px red solid;
+    padding: 10px 5px;
+    width: 300px;
+}
+
+section.Filter-container h4 {
+    margin: 15px 0 10px;
+}
+section.Filter-container fieldset{
+    width: 120px;
+    margin-top: 10px;
+    position: relative;
+    border: 0;
+}
+
+fieldset input {
+    border: 2px red solid;
+    width: max-content;
+    margin-left: 10px;
+    position:absolute;
+    right: 0;
+}
+
+div.filter-price-container input{
+    -webkit-appearance: none; 
+    appearance: none;
+    width: 100%;
+    height: 7px;
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s; 
+    transition: opacity .2s;
+    margin-top: 5px;
+}
+div.filter-price-container input:hover {
+    opacity: 1; 
+  }
+
+
+div.filter-price-container input::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+   width: 17px; 
+   height: 17px; 
+   border-radius: 50%;
+   background: #04AA6D; 
+   cursor: pointer; 
+}
