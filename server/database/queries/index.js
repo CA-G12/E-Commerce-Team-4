@@ -6,16 +6,9 @@ const {
   postToCartQuery,
 } = require('./cart');
 
-const {
-  getAllProducts,
-  getOneProduct,
-} = require('./products');
+const { getAllProducts, getOneProduct } = require('./products');
 
-const {
-  getAccount,
-  getPassword,
-} = require('./auth');
-
+const { getAccount, getPassword } = require('./auth');
 
 module.exports = {
   getUserInfo,
