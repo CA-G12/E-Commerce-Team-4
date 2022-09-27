@@ -12,7 +12,7 @@ const controllerLogin = (req, res) => {
       if (emailData.rowCount === 0) {
         throw new CustomizedError(400, 'Email does not exist');
       }
-      return getPassword(data.email);
+      return getPassword(req.body.email);
     })
     .then((res) => {
       if (res.rowCount === 0) {
