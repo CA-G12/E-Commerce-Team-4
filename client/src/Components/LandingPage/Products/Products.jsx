@@ -1,19 +1,18 @@
 import { useState, useEffect } from 'react'
+import axios from 'axios'
 import Product from './Product/Product'
 import Filter from './Filter/Filter'
 
 import('./Products.css')
 
 function Products() {
-  const [newData, setNewData] = useState(null)
+  const [newData, setNewData] = useState([])
 
   useEffect(() => {
-    fetch('/products')
-      .then((res) => res.json())
-      .then(({ data }) => setNewData(data))
+    axios.get('/api/v1/products').then(({ data }) => setNewData(data.data))
   }, [])
 
-  if (!newData) return <p>Loading ...</p>
+  if (!newData.length) return <p>Loading ...</p>
   return (
     <section className="products-filter-container">
       <Filter />
