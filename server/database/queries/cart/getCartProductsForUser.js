@@ -11,9 +11,7 @@ const getCartProductsForUserQuery = (userId) => {
         cart
       ON
         products.id = cart.product_id
-      INNER JOIN
-        users
-      ON
+      WHERE
         cart.user_id = $1;
     `,
     values: [userId],
