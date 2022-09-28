@@ -10,9 +10,11 @@ function Products() {
   const [error, setError] = useState('')
 
   useEffect(() => {
-    axios("/api/v1/products").then(res => {
-      setProducts(res.data.data)
-    }).catch(() => {
+    axios("/api/v1/cart").then(res => {
+      console.log(res);
+      setProducts(res.data.products)
+    }).catch((err) => {
+      console.log(err);
       setError('Something went wrong')
     }).finally(() => {
       setLoading(false)
@@ -26,16 +28,18 @@ function Products() {
 
   return (
     <section className="products-container-card">
-
-      {error ? <div>{error}</div> : products.map((e) => (
-        <Product
-          key={uuidv4()}
-          product_img={e.product_img}
-          title={e.title}
-          price={e.price}
-          category={e.category}
-        />
-      ))}
+      <h1 className="cart-title">Cart</h1>
+      <section className="products-inner">
+        {error ? <div>{error}</div> : products.map((e) => (
+          <Product
+            key={uuidv4()}
+            product_img={e.product_img}
+            title={e.title}
+            price={e.price}
+            category={e.category}
+          />
+        ))}
+      </section>
     </section>
   );
 }
