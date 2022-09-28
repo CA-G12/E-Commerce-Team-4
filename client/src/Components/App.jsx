@@ -4,6 +4,7 @@ import Cart from './Cart/Cart';
 import LandingPage from './LandingPage/LandingPage';
 import Login from './Login/Login';
 import Signup from './Signup/Signup';
+import Product from './Product/Product';
 
 const router = createBrowserRouter([
   {
@@ -23,17 +24,17 @@ const router = createBrowserRouter([
     element: <Cart />,
   },
   {
-    path: '/product/:productId',
-    element: <div>product</div>,
+    path: '/product/:id',
+    element: <Product />,
   },
-])
+]);
 
 function App() {
   return (
     <div className="App">
       <RouterProvider router={router} />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
