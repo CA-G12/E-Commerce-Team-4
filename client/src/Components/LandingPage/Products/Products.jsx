@@ -8,7 +8,7 @@ import('./Products.css');
 function Products() {
   const [newData, setNewData] = useState([]);
   const [showMoreData, setShowMoreData] = useState([]);
-  const [showMoreCounter, setShowMoreCounter] = useState(3);
+  const [showMoreCounter, setShowMoreCounter] = useState(1);
   const [category, setCategory] = useState('all');
   const [minPrice, setMinPrice] = useState(0);
   const [maxPrice, setMaxPrice] = useState(1500);
