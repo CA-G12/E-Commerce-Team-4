@@ -78,10 +78,7 @@ function Product({ productId, product_img, title, price, category }) {
           <h3 className="category">{category}</h3>
           <h3 className="title">{title}</h3>
           <section className='discount-info'>
-            <button
-              className="buy-btn"
-              type="button"
-            >Buy</button>
+            <button className="buy-btn" type="button">Buy</button>
           </section>
         </section>
       </section >
