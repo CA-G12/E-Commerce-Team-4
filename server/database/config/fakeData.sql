@@ -12,6 +12,14 @@ VALUES
   ('product1', 'https://images.pexels.com/photos/341523/pexels-photo-341523.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1', 30, 'mobile','mobile discription' ),
   ('product2','https://images.pexels.com/photos/2783873/pexels-photo-2783873.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1', 50, 'watch','watch discription' ),
   ('product3','https://images.pexels.com/photos/238118/pexels-photo-238118.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1', 800, 'laptop','watch discription' ),
+  ('product4','https://images.pexels.com/photos/18105/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1', 1000, 'laptop','laptop discription' ),
+  ('product1', 'https://images.pexels.com/photos/341523/pexels-photo-341523.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1', 30, 'mobile','mobile discription' ),
+  ('product2','https://images.pexels.com/photos/2783873/pexels-photo-2783873.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1', 50, 'watch','watch discription' ),
+  ('product3','https://images.pexels.com/photos/238118/pexels-photo-238118.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1', 800, 'laptop','watch discription' ),
+  ('product4','https://images.pexels.com/photos/18105/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1', 1000, 'laptop','laptop discription' ),
+  ('product1', 'https://images.pexels.com/photos/341523/pexels-photo-341523.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1', 30, 'mobile','mobile discription' ),
+  ('product2','https://images.pexels.com/photos/2783873/pexels-photo-2783873.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1', 50, 'watch','watch discription' ),
+  ('product3','https://images.pexels.com/photos/238118/pexels-photo-238118.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1', 800, 'laptop','watch discription' ),
   ('product4','https://images.pexels.com/photos/18105/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1', 1000, 'laptop','laptop discription' );
 
 INSERT INTO 
@@ -19,7 +27,15 @@ INSERT INTO
 VALUES
   (1, 1),
   (1, 2),
-  (2, 3),
-  (2, 4);
+  (1, 3),
+  (1, 4),
+  (1, 5),
+  (1, 6),
+  (2, 7),
+  (2, 8),
+  (2, 9),
+  (2, 10),
+  (2, 11),
+  (2, 12);
 
 COMMIT;
