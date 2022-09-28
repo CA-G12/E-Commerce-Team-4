@@ -13,13 +13,16 @@ function Products() {
   const [minPrice, setMinPrice] = useState(0);
   const [maxPrice, setMaxPrice] = useState(1500);
 
-
-
   const handleFilterCategory = (e) => setCategory(e.target.textContent);
 
-  const changeMinPrice = (e) => {setMinPrice(e.target.value) ;console.log(e.target.value)};
-  const changeMaxPrice = (e) => {setMaxPrice(e.target.value) ;console.log(e.target.value)};
-
+  const changeMinPrice = (e) => {
+    setMinPrice(e.target.value);
+    console.log(e.target.value);
+  };
+  const changeMaxPrice = (e) => {
+    setMaxPrice(e.target.value);
+    console.log(e.target.value);
+  };
 
   const showMoreRequest = () =>
     axios.get(`/api/v1/showMore/${showMoreCounter}`).then(({ data }) => {
@@ -40,21 +43,23 @@ function Products() {
         changeMaxPrice={changeMaxPrice}
         minPrice={minPrice}
         maxPrice={maxPrice}
-
         category={category}
       />
 
       <div className="products-container">
         {category !== 'all'
-          ? [...newData,...showMoreData]
-              .filter((ele) => ele.category === category && ele.price <= maxPrice && ele.price >= minPrice )
-              .map((ele) => <Product data={ele} key={ele.id} />)
-          : [...newData,...showMoreData]
-            .filter((ele) => ele.price<maxPrice && ele.price >minPrice )
-            .map((ele) => ( <Product data={ele} key={ele.id} /> ))}
+          ? [...newData, ...showMoreData]
+              .filter(
+                (ele) =>
+                  ele.category === category &&
+                  ele.price <= maxPrice &&
+                  ele.price >= minPrice
+              )
+              .map((ele) => <Product obj={ele} key={ele.id} />)
+          : [...newData, ...showMoreData]
+              .filter((ele) => ele.price < maxPrice && ele.price > minPrice)
+              .map((ele) => <Product obj={ele} key={ele.id} />)}
       </div>
-
-
 
       <button type="button" onClick={showMoreRequest}>
         {' '}
