@@ -4,11 +4,14 @@ import FilterPrice from './FilterPrice';
 
 import('./filter.css');
 
-function Filter({ handleFilterCategory, category }) {
+function Filter({ handleFilterCategory, category, changeMinPrice, changeMaxPrice,  minPrice ,maxPrice }) {
   return (
     <section className="Filter-container">
-      <FilterCategory handleFilterCategory={handleFilterCategory} category={category}/>
-      <FilterPrice />
+      <FilterCategory
+        handleFilterCategory={handleFilterCategory}
+        category={category}
+      />
+      <FilterPrice  changeMinPrice={changeMinPrice} changeMaxPrice={changeMaxPrice} minPrice={minPrice} maxPrice={maxPrice} />
     </section>
   );
 }

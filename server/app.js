@@ -11,7 +11,7 @@ const router = require('./routes');
 
 const app = express();
 
-app.set('port', process.env.PORT || 3001);
+app.set('port', process.env.PORT || 4000);
 
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
