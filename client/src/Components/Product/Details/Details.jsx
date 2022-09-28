@@ -1,8 +1,14 @@
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
-function Details({ data }) {
+function Details({ data, status }) {
+  const navigate = useNavigate();
+
   const addToCart = (id) => {
-    axios.post('/api/v1/cart', { productId: id });
+    if (status === 'authenticated') {
+      navigate('/cart');
+      axios.post('/api/v1/cart', { productId: id });
+    } else navigate('/login');
   };
 
   return (
@@ -14,7 +20,7 @@ function Details({ data }) {
         <h1>{data.name}</h1>
         <h2>{data.category}</h2>
         <p>{data.description}</p>
-        <h3>{data.price}</h3>
+        <h3>${data.price}</h3>
         <button type="button" onClick={() => addToCart(data.id)}>
           add to cart
         </button>
