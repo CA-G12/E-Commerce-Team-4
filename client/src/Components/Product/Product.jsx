@@ -9,6 +9,11 @@ function Product() {
   const { id } = useParams();
 
   const [newData, setNewData] = useState([]);
+  const [status, setStatus] = useState('Unauthenticated');
+
+  useEffect(() => {
+    axios.get('/api/v1/check-login').then(({ data }) => setStatus(data.msg));
+  }, []);
 
   useEffect(() => {
     axios
@@ -20,7 +25,7 @@ function Product() {
     <div>
       <Header />
       {newData.length ? (
-        <Details data={newData[0]} key={newData} />
+        <Details data={newData[0]} key={newData} status={status} />
       ) : (
         <div>not found data</div>
       )}
