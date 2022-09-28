@@ -2,7 +2,7 @@ const connection = require('../../config/connection');
 
 const getAllProductsQuery = () => {
   const sql = {
-    text: 'select * from products Limit 2;',
+    text: 'select * from products Limit 2 ;',
     values: [],
   };
   return connection.query(sql.text);
@@ -34,7 +34,7 @@ const getProductsByCategoryQuery = (category) => {
 
 const showMoreProductsQuery = (number) => {
   const sql = {
-    text: `select * from products OFFSET '${2 * number}' ROWS FETCH NEXT 2 ROWS ONLY;`,
+    text: `select * from products OFFSET '${2 * number}' ROWS Limit 2 ;`,
     values: [number],
   };
   return connection.query(sql.text);
@@ -47,3 +47,4 @@ module.exports = {
   getProductsByCategoryQuery,
   showMoreProductsQuery,
 };
+// text: `select * from products OFFSET '${2 * number}' ROWS FETCH NEXT 2 ROWS ONLY;`,
