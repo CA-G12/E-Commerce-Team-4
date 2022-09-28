@@ -10,6 +10,7 @@
     "axios": "^0.27.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-icons": "^4.4.0",
     "react-router-dom": "^6.4.1",
     "react-scripts": "5.0.1",
     "uuid": "^9.0.0",
@@ -44,6 +45,5 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "prettier": "2.7.1",
     "stylelint-config-prettier": "^9.0.3"
-  },
-  "proxy": "http://localhost:3001"
+  }
 }
