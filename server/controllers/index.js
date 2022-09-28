@@ -2,12 +2,12 @@ const { login, logout, signUp } = require('./auth');
 const { getCartProducts, postToCart, deleteFromCart } = require('./cart');
 const {
   deleteProduct,
-  getOneProduct,
   getProducts,
   getProductsByPriceDesc,
   getProductsByPriceAsc,
   getProductsByCategory,
   showMoreProducts,
+  productDetails,
 } = require('./products');
 
 module.exports = {
@@ -17,11 +17,11 @@ module.exports = {
   getCartProducts,
   deleteFromCart,
   postToCart,
-  getOneProduct,
   getProducts,
   deleteProduct,
   getProductsByPriceDesc,
   getProductsByPriceAsc,
   getProductsByCategory,
   showMoreProducts,
+  productDetails,
 };
