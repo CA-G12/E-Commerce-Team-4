@@ -6,9 +6,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 0.5rem;
   border-radius: 10px;
   box-shadow: 0px 0px 3px 5px #e6e3e3;
+  margin-bottom: 1.5rem;
 }
 
 .product-card .inner-cont {
@@ -36,10 +36,6 @@
   gap: 1rem;
 }
 
-.other-info .category {
-  font-size: xx-large;
-}
-
 .other-info .header-cart {
   width: 100%;
   height: 25%;
@@ -49,22 +45,45 @@
 }
 
 .other-info .header-cart .price {
-  font-size: 28px;
+  font-size: 2rem;
 }
 
 .other-info .header-cart .trash {
-  font-size: 20px;
+  display: block;
+  font-size: 25px;
+  cursor: pointer;
 }
 
-.product-card .discount {
-  bottom: 15px;
-  right:  10px;
-  margin-bottom: 15px;
-  align-self: flex-start;
+.other-info .header-cart .trash:hover, 
+.other-info .header-cart .trash:focus {
+  animation: rotation 1s infinite linear;
+}
+
+.product-card .buy-btn {
+  width: 8rem;
+  height: 2.5rem;
+  font-size: larger;
+  border: 1px solid #000;
+  border-radius: 0.7rem;
   color: #fff;
-  width: 5rem;
-  min-height: 2rem;
-  text-align: center;
-  border-radius: 10px;
-  background-color:  rgba(0, 82, 62, 0.75);;
+  background-color:  rgba(0, 82, 62, 0.75);
+  cursor: pointer;
+}
+
+.product-card .buy-btn:hover,
+.product-card .buy-btn:focus {
+  box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.5);
+}
+
+.other-info .category {
+  font-size: xx-large;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(359deg);
+  }
 }
