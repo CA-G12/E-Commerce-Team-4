@@ -1,15 +1,27 @@
+import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 import Products from './Products/Products';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
-import './Cart.css';
 
 function Cart() {
+  const navigate = useNavigate();
+
+  const [status, setStatus] = useState(null);
+
+  useEffect(() => {
+    axios.get('/api/v1/check-login').then(({ data }) => setStatus(data.msg));
+  }, []);
+
+  if (status === 'Unauthenticated') navigate('/');
+
   return (
-    <section className="products-container">
+    <>
       <Header />
       <Products />
       <Footer />
-    </section>
+    </>
   );
 }
 
