@@ -8,35 +8,45 @@ import('./Products.css');
 function Products() {
   const [newData, setNewData] = useState([]);
   const [showMoreData, setShowMoreData] = useState([]);
-  const [showMoreCounter, setShowMoreCounter] = useState(3);
+  const [showMoreCounter, setShowMoreCounter] = useState(1);
   const [category, setCategory] = useState('all');
 
   const handleFilterCategory = (e) => setCategory(e.target.textContent);
 
-  const showMoreRequest = ( ) => axios.get(`/api/v1/showMore/${showMoreCounter}`)
-    .then(({ data }) => {
-      setShowMoreData([...showMoreData,...data.data]);
-      setShowMoreCounter(showMoreCounter+1);
+  const changeFilterPrice = (e) => e.target.textContent;
+
+  const showMoreRequest = () =>
+    axios.get(`/api/v1/showMore/${showMoreCounter}`).then(({ data }) => {
+      setShowMoreData([...showMoreData, ...data.data]);
+      setShowMoreCounter(showMoreCounter + 1);
     });
 
   useEffect(() => {
     axios.get('/api/v1/products').then(({ data }) => setNewData(data.data));
   }, []);
 
-
   if (!newData.length) return <p>Loading ...</p>;
   return (
     <section className="products-filter-container">
-      <Filter handleFilterCategory={handleFilterCategory} category={category} />
+      <Filter
+        handleFilterCategory={handleFilterCategory}
+        changeFilterPrice={changeFilterPrice}
+        category={category}
+      />
 
       <div className="products-container">
         {category !== 'all'
-          ? [...showMoreData,...newData]
-            .filter((ele)=> ele.category ===category)
-            .map((ele) => <Product data={ele} key={ele.id} />)
-            : [...showMoreData,...newData].map((ele) => <Product data={ele} key={ele.id} />)}
-      </div> 
-        <button type='button' onClick={showMoreRequest}> Show More </button>
+          ? [...showMoreData, ...newData]
+              .filter((ele) => ele.category === category)
+              .map((ele) => <Product data={ele} key={ele.id} />)
+          : [...showMoreData, ...newData].map((ele) => (
+              <Product data={ele} key={ele.id} />
+            ))}
+      </div>
+      <button type="button" onClick={showMoreRequest}>
+        {' '}
+        Show More{' '}
+      </button>
     </section>
   );
 }

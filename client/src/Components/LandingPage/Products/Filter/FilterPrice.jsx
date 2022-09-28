@@ -1,30 +1,17 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 
-function FilterPrice() {
-  const handle = () => 'dadada'
+function FilterPrice({ changeFilterPrice }) {
   return (
     <div className="filter-price-container">
-      <h4>Range Price</h4>
-      <label htmlFor="points">Max Price:</label>
-      <input
-        type="range"
-        name="points"
-        min="0"
-        max="10"
-        value={7}
-        onChange={handle}
-      />
-      <label htmlFor="points">Min Price:</label>
-      <input
-        type="range"
-        name="points"
-        min="0"
-        max="10"
-        value={0}
-        onChange={handle}
-      />
+      <h4>sort :</h4>
+      <button type="button" onClick={changeFilterPrice}>
+        max
+      </button>
+      <button type="button" onClick={changeFilterPrice}>
+        min
+      </button>
     </div>
-  )
+  );
 }
 
-export default FilterPrice
+export default FilterPrice;
