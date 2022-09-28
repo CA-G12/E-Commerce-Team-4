@@ -5,15 +5,15 @@ const {
   getProductsByCategory,
   showMoreProducts,
 } = require('./getProducts');
-const { getOneProduct } = require('./getOneProduct');
 const { deleteProduct } = require('./deleteProduct');
+const  productDetails = require('./productDetails')
 
 module.exports = {
-  getOneProduct,
   getProducts,
   deleteProduct,
   getProductsByPriceDesc,
   getProductsByPriceAsc,
   getProductsByCategory,
   showMoreProducts,
+  productDetails,
 };

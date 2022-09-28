@@ -1,5 +1,5 @@
 import Products from './Products/Products';
-import Header from "./Header/Header";
+import Header from '../Header/Header';
 
 function Cart() {
   return (

@@ -1,3 +1,8 @@
 {
-    "files.eol": "auto"
+    "files.eol": "auto",
+    "cSpell.words": [
+        "camelcase",
+        "Swal",
+        "sweetalert"
+    ]
 }
