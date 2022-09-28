@@ -11,7 +11,6 @@ function Products() {
 
   useEffect(() => {
     axios("/api/v1/cart").then(res => {
-      console.log(res);
       setProducts(res.data.products)
     }).catch((err) => {
       console.log(err);
@@ -33,6 +32,7 @@ function Products() {
         {error ? <div>{error}</div> : products.map((e) => (
           <Product
             key={uuidv4()}
+            productId={e.id}
             product_img={e.product_img}
             title={e.title}
             price={e.price}
