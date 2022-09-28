@@ -8,12 +8,18 @@ import('./Products.css');
 function Products() {
   const [newData, setNewData] = useState([]);
   const [showMoreData, setShowMoreData] = useState([]);
-  const [showMoreCounter, setShowMoreCounter] = useState(1);
+  const [showMoreCounter, setShowMoreCounter] = useState(3);
   const [category, setCategory] = useState('all');
+  const [minPrice, setMinPrice] = useState(0);
+  const [maxPrice, setMaxPrice] = useState(1500);
+
+
 
   const handleFilterCategory = (e) => setCategory(e.target.textContent);
 
-  const changeFilterPrice = (e) => e.target.textContent;
+  const changeMinPrice = (e) => {setMinPrice(e.target.value) ;console.log(e.target.value)};
+  const changeMaxPrice = (e) => {setMaxPrice(e.target.value) ;console.log(e.target.value)};
+
 
   const showMoreRequest = () =>
     axios.get(`/api/v1/showMore/${showMoreCounter}`).then(({ data }) => {
@@ -30,19 +36,26 @@ function Products() {
     <section className="products-filter-container">
       <Filter
         handleFilterCategory={handleFilterCategory}
-        changeFilterPrice={changeFilterPrice}
+        changeMinPrice={changeMinPrice}
+        changeMaxPrice={changeMaxPrice}
+        minPrice={minPrice}
+        maxPrice={maxPrice}
+
         category={category}
       />
 
       <div className="products-container">
         {category !== 'all'
-          ? [...showMoreData, ...newData]
-              .filter((ele) => ele.category === category)
+          ? [...newData,...showMoreData]
+              .filter((ele) => ele.category === category && ele.price <= maxPrice && ele.price >= minPrice )
               .map((ele) => <Product data={ele} key={ele.id} />)
-          : [...showMoreData, ...newData].map((ele) => (
-              <Product data={ele} key={ele.id} />
-            ))}
+          : [...newData,...showMoreData]
+            .filter((ele) => ele.price<maxPrice && ele.price >minPrice )
+            .map((ele) => ( <Product data={ele} key={ele.id} /> ))}
       </div>
+
+
+
       <button type="button" onClick={showMoreRequest}>
         {' '}
         Show More{' '}
