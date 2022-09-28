@@ -1,7 +1,9 @@
 /* eslint-disable react/destructuring-assignment */
 /* eslint-disable react/prop-types */
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import('./Product.css')
+import { Link } from 'react-router-dom';
+
+import('./Product.css');
 
 function Product({ data }) {
   return (
@@ -15,7 +17,7 @@ function Product({ data }) {
             <h3>${data.price}</h3>
           </div>
           <div className="view-btn">
-            <a href="">View Details</a>
+            <Link to={`product/${data.id}`}>View Details</Link>
           </div>
         </div>
         <hr />
@@ -28,7 +30,7 @@ function Product({ data }) {
         </div>
       </div>
     </div>
-  )
+  );
 }
 
-export default Product
+export default Product;
