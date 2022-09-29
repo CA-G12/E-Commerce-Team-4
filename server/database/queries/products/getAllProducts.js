@@ -34,7 +34,8 @@ const getProductsByCategoryQuery = (category) => {
 
 const showMoreProductsQuery = (number) => {
   const sql = {
-    text: `select * from products OFFSET '${2 * number}' ROWS Limit 10 ;`,
+
+    text: `select * from products OFFSET '${10 * number}' ROWS Limit 10 ;`,
     values: [number],
   };
   return connection.query(sql.text);

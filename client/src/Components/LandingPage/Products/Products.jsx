@@ -17,17 +17,16 @@ function Products() {
 
   const changeMinPrice = (e) => {
     setMinPrice(e.target.value);
-    console.log(e.target.value);
   };
   const changeMaxPrice = (e) => {
     setMaxPrice(e.target.value);
-    console.log(e.target.value);
   };
 
   const showMoreRequest = () =>
     axios.get(`/api/v1/showMore/${showMoreCounter}`).then(({ data }) => {
       setShowMoreData([...showMoreData, ...data.data]);
       setShowMoreCounter(showMoreCounter + 1);
+      console.log(showMoreCounter)
     });
 
   useEffect(() => {
