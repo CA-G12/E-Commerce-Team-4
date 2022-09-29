@@ -36,6 +36,7 @@ function Products() {
 
   if (!newData.length) return <p>Loading ...</p>;
   return (
+    <>
     <section className="products-filter-container">
       <Filter
         handleFilterCategory={handleFilterCategory}
@@ -61,11 +62,14 @@ function Products() {
               .map((ele) => <Product obj={ele} key={ele.id} />)}
       </div>
 
-      <button type="button" onClick={showMoreRequest}>
+    </section>
+
+      <button id="show-more-btn" type="button" onClick={showMoreRequest}>
         {' '}
         Show More{' '}
       </button>
-    </section>
+    </>
+
   );
 }
 
