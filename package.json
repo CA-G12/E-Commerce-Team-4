@@ -4,6 +4,7 @@
   "description": "E-Commerce project built with react.js, node.js.",
   "main": "server/",
   "scripts": {
+    "heroku-postbuild": "cd client && npm i && npm run build",
     "start": "cross-env NODE_ENV=prod node server/",
     "dev": "cross-env NODE_ENV=dev nodemon server/",
     "test": "cross-env NODE_ENV=test jest",
@@ -43,6 +44,7 @@
     "helmet": "^6.0.0",
     "joi": "^17.6.1",
     "jsonwebtoken": "^8.5.1",
+    "morgan": "^1.10.0",
     "pg": "^8.8.0",
     "react-router-dom": "^6.4.1"
   }
