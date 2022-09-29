@@ -9,36 +9,59 @@ export default function Signup() {
   const [isSigned, setIsSigned] = useState(false);
   const [error, setError] = useState('');
 
+  const validateSignup = (
+    { name, username, email, password, passwordConf, country, address }
+  ) => {
+    const validateName = name !== '' && typeof name === 'string';
+    const validateUsername = /^[a-zA-Z0-9]{3,30}$/.test(username);
+    const validateEmail = /^[a-zA-z0-9]?.*@[a-zA-z0-9]{1,}.[a-zA-Z]{1,}$/.test(email);
+    const validatePassword = /^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{6,}$/.test(password);
+    const areTwoPassesMatch = password === passwordConf;
+    const validateCountry = country !== '' && typeof name === 'string';
+    const validateAddress = address !== '' && typeof name === 'string';
+    
+    console.log(
+      areTwoPassesMatch, password, passwordConf
+    );
+    return (validateUsername && validateName && validateEmail) 
+    && (validatePassword && areTwoPassesMatch && validateCountry && validateAddress);
+  }
+
   const handleInput = (e) => {
     setSignupData((prevData) => ({ ...prevData, [e.target.name]: e.target.value }));
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const { name, username, email, password, passwordConf, country, address } = signupData;
-    axios.post('/api/v1/signup', {
-      name,
-      username,
-      email,
-      password,
-      passwordConf,
-      country,
-      address,
-    })
-      .then((data) => {
-        console.log(data);
-        setIsSigned(true);
+    if (validateSignup(signupData)) {
+      console.log('here');
+      const { name, username, email, password, passwordConf, country, address } = signupData;
+      axios.post('/api/v1/signup', {
+        name,
+        username,
+        email,
+        password,
+        passwordConf,
+        country,
+        address,
       })
-      .catch((err) => {
-        setError(err);
-      });
+        .then((data) => {
+          console.log(data);
+          setIsSigned(true);
+        })
+        .catch((err) => {
+          setError(err);
+        });
+    } else {
+      setError('Invalid data!')
+    }
   };
 
   return (
     <section className="signup-outer-cont">
       { (isSigned) && 
       <h1 className='success'>
-        Logged in successfully
+        Signed up successfully <a href='/login'>Login</a>
         <FaWindowClose className="close-icon" onClick={() => setIsSigned(false)} />
       </h1> }
       { (error) && 
@@ -62,7 +85,7 @@ export default function Signup() {
               name="name"
               value={signupData?.name}
               placeholder="Provide your account name"
-              onInput={handleInput}
+              onChange={handleInput}
             />
           </label>
           <label htmlFor="signup-username">
@@ -73,7 +96,7 @@ export default function Signup() {
               name="username"
               value={signupData?.username}
               placeholder="Provide your account username"
-              onInput={handleInput}
+              onChange={handleInput}
             />
           </label>
           <label htmlFor="signup-email">
@@ -84,7 +107,7 @@ export default function Signup() {
               name="email"
               value={signupData?.email}
               placeholder="Provide your account email"
-              onInput={handleInput}
+              onChange={handleInput}
             />
           </label>
           <label htmlFor="signup-password">
@@ -95,7 +118,7 @@ export default function Signup() {
               name="password"
               value={signupData?.password}
               placeholder="Provide your account password"
-              onInput={handleInput}
+              onChange={handleInput}
             />
           </label>
           <label htmlFor="signup-password-conf">
@@ -103,10 +126,10 @@ export default function Signup() {
             <input
               type="password"
               id="signup-password-conf"
-              name="passwordCont"
+              name="passwordConf"
               value={signupData?.passwordConf}
               placeholder="Provide your password confirmation"
-              onInput={handleInput}
+              onChange={handleInput}
             />
           </label>
           <label htmlFor="signup-country">
@@ -117,7 +140,7 @@ export default function Signup() {
               name="country"
               value={signupData?.country}
               placeholder="Provide your country"
-              onInput={handleInput}
+              onChange={handleInput}
             />
           </label>
           <label htmlFor="signup-address">
@@ -128,7 +151,7 @@ export default function Signup() {
               name="address"
               value={signupData?.address}
               placeholder="Provide your address"
-              onInput={handleInput}
+              onChange={handleInput}
             />
           </label>
           <button
@@ -136,6 +159,7 @@ export default function Signup() {
             type="submit"
             onClick={handleSubmit}
           >Submit</button>
+        <h4 className="login">Already have account? <a href="/login">Login!</a></h4>
         </form>
       </section>
     </section>

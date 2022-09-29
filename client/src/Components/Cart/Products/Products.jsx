@@ -6,8 +6,10 @@ import './Products.css';
 
 function Products() {
   const [products, setProducts] = useState([]);
-  const [loading, setLoading] = useState(true)
-  const [error, setError] = useState('')
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState('');
+
+  console.log(products);
 
   useEffect(() => {
     axios("/api/v1/cart").then(res => {
@@ -31,6 +33,7 @@ function Products() {
       <section className="products-inner">
         {error ? <div>{error}</div> : products.map((e) => (
           <Product
+            setProducts={setProducts}
             key={uuidv4()}
             productId={e.id}
             product_img={e.product_img}
