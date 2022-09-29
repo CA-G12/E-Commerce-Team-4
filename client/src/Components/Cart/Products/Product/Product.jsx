@@ -4,7 +4,7 @@ import Swal from 'sweetalert2';
 import { FaTrash } from 'react-icons/fa';
 import './Product.css';
 
-function Product({ productId, product_img, title, price, category }) {
+function Product({ setProducts, productId, product_img, title, price, category }) {
   const deleteProduct = (id) => axios.delete(`/api/v1/cart/${id}`);
 
   const handleDeletion = (e) => {
@@ -19,7 +19,7 @@ function Product({ productId, product_img, title, price, category }) {
 
     swalWithBootstrapButtons
       .fire({
-        title: 'Are you sure?',
+        title: 'Are you sure you want to delete it?',
         text: "You won't be able to revert this!",
         icon: 'warning',
         showCancelButton: true,
@@ -38,9 +38,7 @@ function Product({ productId, product_img, title, price, category }) {
                   'success',
                   'cool'
                 );
-                setTimeout(() => {
-                  window.location.reload();
-                }, 1000);
+                setProducts((prevProducts) => prevProducts.filter((product) => product.id !== +id));
               }
             })
             .catch((err) => {
