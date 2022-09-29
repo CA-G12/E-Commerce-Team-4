@@ -1,4 +1,30 @@
 footer{
-    border: 2px solid rgb(0, 106, 255);
-    
+    background-color:rgba(0, 0, 0, 0.933);
+    padding: 20px;
+}
+footer h1 , footer p, footer div {
+    margin: 10px auto 0;
+    width: max-content;
+    color:  rgb(198, 198, 198);
+}
+
+footer div a {
+    color:  rgb(198, 198, 198);
+    padding: 7px  15px ;
+    border-radius: 4px;
+    margin: 0 5px;
+}
+
+footer div a:hover {
+    color:  rgb(198, 198, 198);
+    padding: 7px  15px ;
+    background-color:   rgb(198, 198, 198);
+    color:rgba(0, 0, 0, 0.933);
+}
+footer div ion-icon{
+    font-size: 22px;
+}
+footer h1 {
+    font-weight: 400;
+    font-size: 24px;
 }
