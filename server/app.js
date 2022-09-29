@@ -23,7 +23,10 @@ app.use(
     directives: { 'img-src': ["'self'", 'https: data:'] },
   })
 );
-app.use(express.static(join(__dirname, '..', 'client', 'build')));
 app.use('/api/v1/', router);
+app.use(express.static(join(__dirname, '..', 'client', 'build')));
+app.get('*', (req,res) => {
+  res.sendFile(join(__dirname, '..', 'client', 'build', 'index.html'))
+})
 
 module.exports = app;
