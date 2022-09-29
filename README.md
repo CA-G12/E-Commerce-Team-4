@@ -4,7 +4,7 @@ E-Commerce project built with react.js, node.js.
 
 ## Live link
 
-You cans check the website out from ***[HERE]()***.
+You cans check the website out from ***[HERE](https://e-commerce-team4.herokuapp.com/)***.
 
 ## User journey
 
@@ -65,15 +65,30 @@ You cans check the website out from ***[HERE]()***.
 
 ## Figma design
 
-![Desktop](https://user-images.githubusercontent.com/77394697/192277615-f8b08a28-6f9b-4416-89e9-22793cf16f7a.png)
+![landing1](https://user-images.githubusercontent.com/77394697/192991570-9a04b243-e826-4185-b0eb-a55992325c70.png)
 ---
 
-![Home-Page](https://user-images.githubusercontent.com/77394697/192277625-4aea441d-90ae-4e2d-9b2c-e75cd5f4bf04.png)
+![landing2](https://user-images.githubusercontent.com/77394697/192991586-1609f4c8-2dd1-43a7-a0bc-3922db6ba8cd.png)
+---
+
+![landing3](https://user-images.githubusercontent.com/77394697/192991593-d0351781-81c3-4855-b45d-f686875f7386.png)
+---
+
+![product](https://user-images.githubusercontent.com/77394697/192994981-112c2514-a7a4-4b53-b55f-57bb54d9d774.png)
+---
+
+![cart](https://user-images.githubusercontent.com/77394697/192994785-c557ff90-15fa-481e-98c4-7576dc1f7580.png)
+---
+
+![login](https://user-images.githubusercontent.com/77394697/192991596-fa244d86-d3b0-4184-ac95-e8ea81f838d2.png)
+---
+
+![signup](https://user-images.githubusercontent.com/77394697/192991601-a1502e6e-056f-4a0e-8249-a508dc330e23.png)
 ---
 
 ## Team members
 
-***[Basil Al-Sheikh](https://github.com/Bas-Shiekh)***
-***[Mostafa Balousha](https://github.com/MostafaBalousha123)***
-***[AbedIllah Abo-AlHusein](https://github.com/abdou059)***
-***[Mustafa Salem](https://github.com/moustf)***
+- ***[Basil Al-Sheikh](https://github.com/Bas-Shiekh)***
+- ***[Mostafa Balousha](https://github.com/MostafaBalousha123)***
+- ***[AbedIllah Abo-AlHusein](https://github.com/abdou059)***
+- ***[Mustafa Salem](https://github.com/moustf)***
