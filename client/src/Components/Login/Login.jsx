@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { FaWindowClose } from 'react-icons/fa';
 import axios from 'axios';
 import './Login.css';
@@ -9,24 +10,42 @@ export default function Login() {
   const [isLogged, setIsLogged] = useState(false);
   const [error, setError] = useState('');
 
+  const navigate = useNavigate();
+
   const handleInput = (e) => {
     setLoginData((prevData) => ({ ...prevData, [e.target.name]: e.target.value }));
   };
 
+  const handleValidation = ({ email, password }) => {
+    const isEmailValid = /^[a-zA-z0-9]?.*@[a-zA-z0-9]{1,}.[a-zA-Z]{1,}$/.test(email);
+    const isPassValid =  /^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}$/.test(password);
+    return (isEmailValid && isPassValid);
+  }
+
   const handleSubmit = (e) => {
+    console.log(e.target);
     e.preventDefault();
-    const { email, password } = loginData;
-    axios.post('/api/v1/login', {
-      email,
-      password,
-    })
-      .then((data) => {
-        console.log(data);
-        setIsLogged(true);
+    if (handleValidation(loginData)) {
+      const { email, password } = loginData;
+      axios.post('/api/v1/login', {
+        email,
+        password,
       })
-      .catch((err) => {
-        setError(err);
-      });
+        .then((data) => {
+          if (data.data.msg !== 'login true') {
+            setError('Wrong Password or email!');
+          }
+          setIsLogged(true);
+          if (data.data.msg === 'login true') {
+            navigate('/');
+          }
+        })
+        .catch((err) => {
+          setError(err);
+        });
+    } else {
+      setError('Invalid email address or password!!');
+    }
   };
 
 
@@ -58,7 +77,7 @@ export default function Login() {
               name="email"
               value={loginData.email}
               placeholder="Provide your account email"
-              onInput={handleInput}
+              onChange={handleInput}
             />
           </label>
           <br />
@@ -70,7 +89,7 @@ export default function Login() {
               name="password"
               value={loginData.password}
               placeholder="Provide your account password"
-              onInput={handleInput}
+              onChange={handleInput}
             />
           </label>
           <br />
@@ -79,6 +98,7 @@ export default function Login() {
             type="submit"
             onClick={handleSubmit}
           >Submit</button>
+          <h4 className="signup">Don&apos;t you have an account? <a href="/signup">Create one!</a></h4>
         </form>
       </section>
     </section>

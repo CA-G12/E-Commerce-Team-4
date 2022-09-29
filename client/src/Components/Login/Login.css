@@ -78,6 +78,11 @@
   border-radius: 8px;
 }
 
+.login-outer-cont .login-inner-cont #login-form .signup {
+  margin-top: 1rem;
+  color: rgba(54, 54, 54, 0.596);
+}
+
 .login-outer-cont .login-inner-cont #login-form .submit:hover,
 .login-outer-cont .login-inner-cont #login-form .submit:hover {
   background-color: #fff;
