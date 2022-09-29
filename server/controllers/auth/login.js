@@ -9,7 +9,7 @@ const controllerLogin = (req, res) => {
   schemaLogin.validateAsync(req.body)
     .then((data) => checkEmail(data.email))
     .then((emailData) => {
-      if (emailData.rowCount === 0) {
+      if (emailData.status === 400) {
         throw new CustomizedError(400, 'Email does not exist');
       }
       return getPassword(req.body.email);
