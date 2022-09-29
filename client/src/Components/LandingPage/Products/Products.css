@@ -14,24 +14,24 @@ section.products-filter-container{
 }
 
 .products-container div.card {
-    margin: 10px;
+    margin: 0 1rem;
 }
+
 #show-more-btn{
-    background-color:#06283D;
+    background-color:#000000ee;
     display:block;
     margin: 30px auto 40px;
     padding: 0.7rem 2rem;
-    border: none;
     color: white;
     font-size: 17px;
     cursor: pointer;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
     border: 2px #06283D solid;
-
+    user-select: none;
 }
 
 #show-more-btn:hover {
-    color: #06283D;
-    background-color: #DFF6FF;
-    border: 2px #06283D solid;
+    color: #000000ee;
+    background-color: inherit;
+    border: 2px #000000ee solid;
 }
