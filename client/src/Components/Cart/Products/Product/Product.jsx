@@ -4,7 +4,14 @@ import Swal from 'sweetalert2';
 import { FaTrash } from 'react-icons/fa';
 import './Product.css';
 
-function Product({ setProducts, productId, product_img, title, price, category }) {
+function Product({
+  setProducts,
+  productId,
+  product_img,
+  title,
+  price,
+  description,
+}) {
   const deleteProduct = (id) => axios.delete(`/api/v1/cart/${id}`);
 
   const handleDeletion = (e) => {
@@ -38,7 +45,9 @@ function Product({ setProducts, productId, product_img, title, price, category }
                   'success',
                   'cool'
                 );
-                setProducts((prevProducts) => prevProducts.filter((product) => product.id !== +id));
+                setProducts((prevProducts) =>
+                  prevProducts.filter((product) => product.id !== +id)
+                );
               }
             })
             .catch((err) => {
@@ -65,15 +74,15 @@ function Product({ setProducts, productId, product_img, title, price, category }
         <img className="img-url" src={product_img} alt="" />
         <section className="other-info">
           <section className="header-cart">
-            <h3 className="price">$ {price} </h3>
+            <h3 className="price">$ {price}</h3>
             <FaTrash
               className="trash"
               id={productId}
               onClick={handleDeletion}
             />
           </section>
-          <h3 className="category">{category}</h3>
-          <h3 className="title">{title}</h3>
+          <h3 className="category">{title}</h3>
+          <p>{description}</p>
           <section className="discount-info">
             <button className="buy-btn" type="button">
               Buy

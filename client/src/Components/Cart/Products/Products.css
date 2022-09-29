@@ -1,18 +1,20 @@
 .products-container-card {
   font-family: 'Roboto', sans-serif;
-  width: 80%;
+  width: 100%;
   min-height: 80vh;
-  margin-top: 2.5rem;
+  margin: 2rem auto 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 1rem 3rem;
   gap: 2rem;
+  overflow-y: auto;
 }
 
 .products-container-card .cart-title {
-  font-size: 2.5rem;
+  font-size: 2.2rem;
   text-decoration: underline;
+  color: var(--black);
 }
 
 .products-container-card .products-inner {
