@@ -11,6 +11,10 @@ nav {
   font-family: 'Roboto', sans-serif;
 }
 
+nav a {
+  text-decoration: none;
+}
+
 nav p {
   padding: 2px 8px;
   font-size: 21px;
