@@ -3,7 +3,7 @@
 function FilterPrice({changeMinPrice,  changeMaxPrice, minPrice, maxPrice }) {
   return (
     <div className="filter-price-container">
-      <h4>Range Price</h4>
+      <h2>Price</h2>
       <label htmlFor="price">Max Price: {maxPrice}</label>
       <input type="range"
       name="price"
